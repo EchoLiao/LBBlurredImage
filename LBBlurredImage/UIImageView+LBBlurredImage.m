@@ -10,7 +10,7 @@
 #import "UIImage+ImageEffects.h"
 
 CGFloat const kLBBlurredImageDefaultBlurRadius            = 20.0;
-CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.8;
+CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.0;
 
 @implementation UIImageView (LBBlurredImage)
 
@@ -40,7 +40,7 @@ CGFloat const kLBBlurredImageDefaultSaturationDeltaFactor = 1.8;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.image = blurredImage;
-            if (completion) {
+            if(completion) {
                 completion();
             }
         });
